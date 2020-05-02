@@ -1,0 +1,11 @@
+@import '../Reset.css';
+
+body {
+    margin: 25px;
+    background: #fff;
+}
+
+.empty img {
+    margin: 35px auto;
+    display: block;
+}

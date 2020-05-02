@@ -1,0 +1,39 @@
+@import '../Reset.css';
+
+body {
+    margin: 40px;
+    background: #fff;
+}
+
+
+.title {
+    margin-bottom: 10px;
+}
+
+.top {
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.top .item {
+    position: relative;
+    bottom: -1px;
+    text-align: center;
+    color: #f40;
+    background: #fff;
+    line-height: 28px;
+    width: 70px;
+    border: 1px solid #f3f3f3;
+    border-bottom: none;
+}
+
+.box {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #e5debc;
+    background: #fff7d1;
+    line-height: 22px;
+}
+
+.box a {
+    color: #519ae3;
+}

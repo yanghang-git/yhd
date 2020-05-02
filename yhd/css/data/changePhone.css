@@ -1,0 +1,98 @@
+@import '../Reset.css';
+
+body {
+    margin: 40px;
+    background: #fff;
+}
+
+
+.title {
+    margin-bottom: 10px;
+}
+
+.box-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.box-title>div {
+    background: #e8e8e8;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.box-title>div.pitch {
+    color: #fff;
+    background: #f40;
+}
+
+
+
+.box-value-two .phone ,
+.box-value-one .phone {
+    width: 80%;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.box-value-two .phone>span ,
+.box-value-one .phone>span {
+    color: red;
+}
+.box-value-two .phone>input[type='text'] ,
+.box-value-one .phone>input[type='text'] {
+    width: 90%;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+.box-value-two .phone>input[type='text'] {
+    margin-bottom: 0;
+}
+.box-value-two .phone .auth input[type='text'] ,
+.box-value-one .phone .auth input[type='text'] {
+    width: 70%;
+    padding-left: 20px;
+    outline: none;
+    margin-bottom: 20px;
+}
+.box-value-two .phone button,
+.box-value-one .phone button {
+    width: 20%;
+    background: #f40;
+    border: none;
+    height: 34px;
+    margin-left: -5px;
+    color: #fff;
+}
+.box-value-two>button ,
+.box-value-one>button {
+    color: #fff;
+    display: block;
+    width: 20%;
+    background: #f40;
+    border: none;
+    height: 34px;
+    margin: 0 auto;
+}
+
+.box-value-two span {
+    display: block;
+    color: red;
+    line-height: 30px;
+    height: 30px;
+}
+.box-value-two .auth {
+    margin-bottom: 30px;
+}
+
+.box-value-two .save  {
+    width: 80%;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.box-value-two .save button {
+    width: 90%;
+}
+
+.box-value-two {
+    display: none;
+}

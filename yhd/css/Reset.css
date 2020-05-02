@@ -1,0 +1,73 @@
+/*
+ * 样式重置：
+ *      在html中很多标签带有一些样式。但是我们不想使用它们。所以需要将他们的样式进行重置。
+ * 原则:
+ *      网站中需要用到的标签才它们给重置。只重置自身有的属性。
+ */
+@import 'https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.css';
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+input,
+button{
+    margin:0;
+}
+
+input,
+ul,
+button{
+    padding: 0;
+    outline:none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    border:none;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover {
+    text-decoration:none;
+}
+
+i{
+    font-style: normal;
+}
+
+button{
+    outline: none;
+}
+
+body{
+    /*字体大小/行高 字体样式  */
+    /*行高 ：字体大小 * 1.5*/
+    /*\5b8b\4f53 UniCode编码 (宋体)*/
+    font: 12px Helvetica Neue,tahoma,Arial,Verdana,"Microsoft YaHei","Hiragino Sans GB","\5b8b\4f53";
+    color: #3c3c3c;
+    background-color:#f4f4f4;
+}
+
+.clearFix::after{
+    content: '';
+    display:block;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}

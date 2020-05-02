@@ -1,0 +1,278 @@
+@import '../Reset.css';
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../../font/data/address/iconfont.eot');
+    src: url('../../font/data/address/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../../font/data/address/iconfont.woff2') format('woff2'),
+    url('../../font/data/address/iconfont.woff') format('woff'),
+    url('../../font/data/address/iconfont.ttf') format('truetype'),
+    url('../../font/data/address/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 30px;
+    background: #fff;
+}
+
+.title {
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f3f3f3;
+    color: #666;
+}
+
+.value {
+    margin-top: 20px;
+}
+
+.value .addAddress {
+    text-align: center;
+    border: 1px solid #f3f3f3;
+    line-height: 60px;
+    cursor: pointer;
+}
+.value .addAddress:hover {
+    background: #f3f3f3;
+}
+.new .add {
+    width: 80%;
+    background: #fff;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    border: 4px solid rgba(0, 0, 0, .1);
+}
+.new {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: rgba(0,0,0,.2);
+}
+
+.new .add .title {
+    padding: 10px;
+}
+
+.new .add .title h5 {
+    float: left;
+    cursor: pointer;
+}
+
+.new .add .title .exit {
+    color: #000;
+    float: right;
+    cursor: pointer;
+}
+.new .add .data .person {
+    margin-top: 20px;
+}
+.new .add .data>div {
+    margin: 30px 20px;
+    position: relative;
+}
+.new .add .data .first {
+    width: 100%;
+    text-align: right;
+    color: #999;
+    padding-right: 0;
+}
+.new .add .data .first>span {
+    color: #f40;
+}
+
+.new .add .data .person .first ,
+.new .add .data .indetail .first ,
+.new .add .data .phone .first ,
+.new .add .data .phone .row .or ,
+.new .add .data .phone .phonecall ,
+.new .add .data .label .first{
+    line-height: 32px;
+}
+.new .add .data  input[type='text']{
+    padding: 8px 5px;
+    width: 100%;
+    height: 32px;
+
+}
+
+.new .add .data input[type='text']:focus {
+    height: 32px;
+    border: 1px solid #f40;
+    outline: none;
+}
+.new .add .roughly .row .col>select {
+    width: 100%;
+    display: none;
+}
+.new .add .roughly .row .col:first-of-type>select {
+    display: block;
+}
+.new .add .data .phone .row .or {
+    padding: 0;
+    text-align: right;
+    color: #999;
+}
+
+.new .add .data .phone .phonecall>div {
+    padding: 0 2px;
+}
+
+.new .add .data .label .row .col div {
+    float: left;
+    height: 25px;
+    border: 1px solid #999;
+    margin-right: 15px;
+    padding: 0 10px;
+    line-height: 25px;
+    margin-top: 4px;
+    cursor: pointer;
+    color: #999;
+}
+
+.new .add .data .bottom {
+    margin: 0 auto 30px;
+    width: 150px;
+}
+.new .add .data .bottom button {
+    border: none;
+    padding: 7px 20px;
+    color: #999;
+}
+.new .add .data .bottom .save {
+    background: #f40;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.new .add .data .hint {
+    position: absolute;
+    top: 35px;
+    left: 20%;
+    color: red;
+}
+
+.new .add .data .roughly .hint {
+    top: 20px;
+}
+
+.new .add .data .phone .hint {
+    left: 6%;
+}
+
+/* 地址目录 */
+.value .address-list .address-item .item-left{
+    padding: 20px;
+}
+.value .address-list .address-item {
+    border: 1px solid #f3f3f3;
+    margin: 10px 0;
+    position: relative;
+}
+.value .address-list .address-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.value .address-list .address-item .item-left .item-title div {
+    display: inline-block;
+}
+.value .address-list .address-item .item-left .item-title .name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.value .address-list .address-item .item-left .item-title {
+    color: #999;
+}
+.value .address-list .address-item .item-left .item-title .box {
+    border: 1px solid #ff5617;
+    height: 20px;
+    color: #ff5617;
+    margin-left: 20px;
+    position: relative;
+    bottom: 10px;
+}
+.value .address-list .address-item .item-left .item-title .box>span{
+    background: #ff5617;
+    color: #fff;
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    line-height: 19px;
+    text-align: center;
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+}
+.value .address-list .address-item .item-left .item-title .box>.box-value {
+    padding: 0 5px;
+}
+
+.value .address-list .address-item .item-left .item-value strong {
+    margin-right: 10px;
+}
+.value .address-list .address-item .item-left .item-value p {
+    margin-top: 5px;
+}
+.value .address-list .address-item .item-left .item-value {
+    margin: 10px 0;
+}
+
+.value .address-list .address-item .item-right {
+    border-right: 1px solid #f3f3f3;
+    background: #f3f3f3;
+    padding-top: 10px;
+    position: relative;
+}
+
+.value .address-list .address-item:hover .item-right .remove {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    display: block;
+}
+.value .address-list .address-item .item-right .remove {
+    position: absolute;
+    top: 0;
+    right: -27px;
+    width: 25px;
+    text-align: center;
+    line-height: 20px;
+    background: #f3f3f3;
+    border: 1px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    display: none;
+}
+.value .address-list .address-item .item-right .remove:hover {
+    color: #f40;
+}
+.value .address-list .address-item .item-right p{
+    text-align: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.value .address-list .address-item .item-right .default {
+    color: #f40;
+}
+
+.value .address-list .address-item.default:before {
+    content: '默认地址';
+    background: rgba(255, 86, 22, .4);
+    color: rgba(255, 86, 22, 1);
+    display: inline-block;
+    font-size: 14px;
+    width: 20px;
+    padding: 30px 30px 15px 15px;
+    margin: 0 auto;
+    line-height: 15px;
+}

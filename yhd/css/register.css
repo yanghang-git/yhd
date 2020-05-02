@@ -1,0 +1,218 @@
+@import 'Reset.css';
+
+body {
+    background-color: #fcfcfc;
+}
+/* 头部 */
+.header-top {
+    background: #fff;
+    font-size: 12px;
+    box-shadow: rgba(0,0,0,.3) 0 0 8px;
+}
+
+.header-top .col>div{
+    display: inline-block;
+}
+
+.header-top .login {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.header-top .login a{
+    color: #999;
+}
+
+.header-top .login a:hover {
+    color: #f40;
+}
+
+.header-top .help a:hover {
+    color: #f40;
+}
+.header-top .help {
+    position: relative;
+}
+.header-top .help:hover ul {
+    display: block;
+}
+
+.header-top .help ul{
+    position: absolute;
+    width: 70px;
+    border: 1px solid #999;
+    left: -15px;
+    display: none;
+}
+
+.header-top .help ul li{
+    border-bottom: 1px solid #f3f3f3;
+    text-align: center;
+    padding: 3px 0;
+}
+
+/* 主题 */
+.main {
+    margin: 0 auto;
+    width: 350px;
+}
+
+.main h1{
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 23px;
+}
+
+.main form {
+    color: #999;
+    font-size: 14px;
+}
+
+.main form .repassword {
+    margin-bottom: 15px;
+}
+
+.main form>div {
+    margin-bottom: 30px;
+}
+
+.main form>.protocol {
+    margin: 15px 0 ;
+}
+
+.main form .form-group input:focus {
+    box-shadow:none;
+    border-color: #ced4da;
+}
+
+.main form .form-group {
+    position: relative;
+}
+
+.main form .flag{
+    display: none;
+    position: absolute;
+    line-height: 35px;
+}
+
+.main form .group::after {
+    content: '√';
+    display: block;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50%;
+    background: #65c73e;
+    position: absolute;
+    top: 6px;
+    right: -45px;
+}
+
+.main .form-group .hintbox {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    display: none;
+    z-index: -1;
+}
+
+.main .form-group .hintbox div {
+    float: left;
+}
+
+.main form .form-group .arrow {
+    width: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #e4e4e4 transparent transparent;
+}
+
+.main form .form-group .hint {
+    display: block;
+    max-width: 190px;
+    background-color: #e4e4e4;
+    color: #666;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 8px 15px;
+    overflow: hidden;
+}
+
+.main form .row {
+    margin-bottom: 15px;
+}
+
+.main form .btn-group {
+    padding-left: 0;
+}
+
+.main form .btn-group .btn-secondary {
+    height: 38px;
+}
+
+.main form .protocol {
+    text-align: center;
+}
+
+.main form .protocol a {
+    color: #0056b3;
+}
+
+.main form>.btn-group {
+    width: 100%;
+}
+
+.main form>.btn-group>button{
+    background: #f40;
+    border-color: #f40;
+}
+
+.main form .form-group .crystr {
+    position: absolute;
+    top: 0;
+    right: -178px;
+    height: 38px;
+    line-height: 50px;
+    display: none;
+}
+.main form .form-group .crystr .hint {
+    font-size: 0;
+}
+.main form .form-group .crystr .arrow {
+    position: absolute;
+    top: 13px;
+    left: -10px;
+}
+
+.main form .form-group .crystr .hint div {
+    display: inline-block;
+    margin-right: 5px;
+    width: 33px;
+    height: 10px;
+    background: #fff;
+}
+
+.main form .form-group .crystr .hint .font {
+    font-size: 12px;
+    display: inline-block;
+    margin-right: -6px;
+}
+.main form .btn-group .btn:focus,
+.main form .btn-group button:focus {
+    box-shadow:none;
+}
+
+/* 底部 */
+.button {
+    padding-top: 20px;
+    border-top: 1px solid #f4f4f4;
+    text-align: center;
+}
+
+.button p {
+    line-height: 25px;
+}
+

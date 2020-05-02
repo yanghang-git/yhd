@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册1号店</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <a href="index.html"><img src="https://passport.yhd.com/front-passport/passport/images/loginlogo.jpg" alt=""></a>
+                </div>
+                <div class="col">
+                    <div class="login">
+                        您好，欢迎光临1号店！
+                        <a href="enter.html">请登录</a>
+                    </div>
+                    <div class="help">
+                        <a href="#">帮助中心</a>
+                        <ul>
+                            <li><a href="#">包裹跟踪</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">在线退换货</a></li>
+                            <li><a href="#">在线投诉</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主题 -->
+    <div class="main">
+        <h1>1号店注册</h1>
+        <form>
+            <div class="form-group user">
+                <span class="flag">用户名</span><input type="text" maxlength="20"  class="form-control" placeholder="用户名">
+                <div class="hintbox">
+                    <div class="arrow"></div>
+                    <div class="hint">4-20位数字，可由中文、英文、数字或符号"_"组成</div>
+                </div>
+            </div>
+            <div class="form-group phone">
+                <span class="flag">手机号</span><input type="text" maxlength="11" class="form-control" placeholder="手机号">
+                <div class="hintbox">
+                    <div class="arrow"></div>
+                    <div class="hint">请填写正确的手机号码，以便接收订单通知，找回密码等</div>
+                </div>
+            </div>
+            <div class="row number">
+                <div class="form-group col-8">
+                    <span class="flag">短信验证码</span><input type="text" maxlength="4" class="form-control" placeholder="短信验证码">
+                    <div class="hintbox">
+                        <div class="arrow"></div>
+                        <div class="hint">如无法接收验证码，请重启手机并确定短信未被拦截</div>
+                    </div>
+                </div>
+                <div class="col btn-group">
+                    <button type="button" class="btn btn-secondary">获取验证码</button>
+                </div>
+            </div>
+            <div class="form-group password">
+                <span class="flag">设置密码</span><input type="password" maxlength="20" class="form-control" placeholder="设置密码">
+                <div class="hintbox">
+                    <div class="arrow"></div>
+                    <div class="hint">6-20个大小写字母、符号或数字的组合</div>
+                </div>
+                <div class="crystr">
+                    <div class="arrow"></div>
+                    <div class="hint">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="font">低</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group repassword">
+                <span class="flag">确认密码</span><input type="password" maxlength="20" class="form-control" placeholder="确认密码">
+                <div class="hintbox">
+                    <div class="arrow"></div>
+                    <div class="hint">请再次输入密码</div>
+                </div>
+            </div>
+            <div class="protocol">
+                <span>点击注册，表示您同意1号店 <a href="#">《服务协议及隐私声明》</a></span>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary">同意协议并注册</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- 尾部 -->
+    <div class="button">
+        <p><a href="#">沪ICP备16050468号</a> | <a href="#">沪B2-20170039</a> | <a href="#">营业执照</a></p>
+        <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved</p>
+    </div>
+</body>
+<script src="js/jquery1.12.4.js"></script>
+<script src="js/register.js"></script>
+</html>

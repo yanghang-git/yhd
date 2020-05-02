@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0570493e-be96-4356-b80b-110de38e5a30" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZzEaRk8rYMEDvPyVHuMsRAWynk" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA\SoundCode\yhd\font\data\address" />
+      <recent name="E:\JAVA\SoundCode\yhd\font\data_index" />
+      <recent name="E:\JAVA\SoundCode\yhd\font\enter" />
+      <recent name="E:\JAVA\SoundCode\yhd\css" />
+      <recent name="E:\JAVA\SoundCode\yhd\font\index" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA\SoundCode\yhd\data" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0570493e-be96-4356-b80b-110de38e5a30" name="Default Changelist" comment="" />
+      <created>1585833585197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585833585197</updated>
+      <workItem from="1585833589273" duration="7972000" />
+      <workItem from="1585882267756" duration="38691000" />
+      <workItem from="1585978355584" duration="28187000" />
+      <workItem from="1586050424838" duration="6311000" />
+      <workItem from="1586070651051" duration="19619000" />
+      <workItem from="1586138869087" duration="30779000" />
+      <workItem from="1586238140322" duration="135000" />
+      <workItem from="1586257304115" duration="11361000" />
+      <workItem from="1586313709942" duration="39269000" />
+      <workItem from="1586402715691" duration="7658000" />
+      <workItem from="1586418270393" duration="24430000" />
+      <workItem from="1586488583050" duration="20672000" />
+      <workItem from="1586572552454" duration="48000" />
+      <workItem from="1586585215290" duration="2790000" />
+      <workItem from="1587442597482" duration="3689000" />
+      <workItem from="1587453271961" duration="1503000" />
+      <workItem from="1587537422032" duration="21000" />
+      <workItem from="1587794294599" duration="6107000" />
+      <workItem from="1588144790928" duration="3684000" />
+      <workItem from="1588155915260" duration="35000" />
+      <workItem from="1588214952612" duration="2051000" />
+      <workItem from="1588217158827" duration="206000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

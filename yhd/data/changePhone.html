@@ -1,0 +1,108 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/data/changePhone.css">
+</head>
+<body>
+<div class="title">
+    <h5>修改密码</h5>
+</div>
+
+<div class="box">
+    <div class="box-title row">
+        <div class="col pitch">1.验证身份</div>
+        <div class="col">2.更改手机号</div>
+    </div>
+
+    <div class="box-value-one">
+        <div class="phone">
+            <input type="text" maxlength="11" disabled>
+            <div class="auth">
+                <input type="text" maxlength="4" placeholder="请输入验证码">
+                <button>获取验证码</button>
+            </div>
+        </div>
+        <button  disabled="disabled">下一步</button>
+    </div>
+
+    <div class="box-value-two">
+        <div class="phone">
+            <input type="text" maxlength="11" placeholder="请输入您的新手机号">
+            <span></span>
+            <div class="auth">
+                <input type="text" maxlength="4" placeholder="请输入验证码">
+                <button>获取验证码</button>
+            </div>
+        </div>
+        <div class="save">
+            <button disabled>保存设置</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery1.12.4.js"></script>
+<script>
+    $(function () {
+
+        let userName = sessionStorage.getItem('user');
+        let user = JSON.parse(localStorage.getItem(userName));
+
+        // 填充手机号
+        $('.box-value-one .phone>input').val(user.phone);
+
+        // 判断验证码
+        $('.box-value-one .phone .auth input').bind("input propertychange",function () {
+            if($(this).val().length === 4) {
+                $('.box-value-one>button').removeAttr('disabled');
+            } else {
+                $('.box-value-one>button').attr('disabled', 'disabled');
+            }
+        });
+
+        // 点击下一步
+        $('.box-value-one>button').click(function () {
+            $(this).parent().css('display','none').next().css('display','block');
+        });
+
+        // 手机号
+        $('.box-value-two .phone>input').blur(function () {
+            if(/13[6-9]\d{8}/.test($(this).val()) && !localStorage.getItem($(this).val())) {
+                $(this).next().text('');
+            } else {;
+                if($(this).val() === ''){
+                    $(this).next().text('手机号不能为空');
+                } else if(localStorage.getItem($(this).val()) != null){
+                    $(this).next().text('手机号已被注册');
+                } else {
+                    $(this).next().text('格式错误，请输入正确的手机号码');
+                }
+            }
+        });
+
+        // 判断验证码
+        $('.box-value-two .phone .auth input').bind("input propertychange",function () {
+            if($(this).val().length === 4) {
+                $('.box-value-two .save button').removeAttr('disabled');
+            } else {
+                $('.box-value-two .save button').attr('disabled', 'disabled');
+            }
+        });
+
+        // 修改成功
+        $('.box-value-two .save').click(function () {
+            if($('.box-value-two .phone>span').text() === ''){
+                user.phone = $('.box-value-two .phone>input').val();
+                localStorage.setItem(userName , JSON.stringify(user));
+                alert('修改成功');
+            }
+        });
+    })
+</script>
+</html>

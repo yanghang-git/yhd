@@ -1,0 +1,96 @@
+@import '../Reset.css';
+
+body {
+    margin: 40px;
+    background: #fff;
+}
+
+
+.title {
+    margin-bottom: 10px;
+}
+
+.top {
+    position: relative;
+}
+
+.top>a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #06c;
+    z-index: 5;
+}
+.top a:hover {
+    color: #f40 !important;
+}
+.top .top-right ,
+.top .top-left {
+    padding-right: 0;
+    line-height: 50px;
+    margin: 40px 0;
+    text-align: center;
+}
+.top .top-left {
+    padding-right: 0;
+    border-right: 1px solid #c9c9c9;
+}
+.top  span:first-of-type {
+    font-size: 18px;
+    padding-right: 30px;
+}
+
+.top .num {
+    font-size: 32px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.top .top-left a{
+    padding: 2px 8px;
+    background-color: #f2eef5;
+    color: #7e6c9e;
+    border-radius: 18px;
+}
+
+
+.value-top {
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.value-top ul li {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+    margin: 0 10px;
+}
+.value-top ul.fl li:first-of-type {
+    margin-left: 0;
+}
+.value-top ul.fr li:last-of-type {
+    margin-right: 0;
+}
+.value-top ul.fl li {
+    font-size: 14px;
+}
+.value-top ul li.bor,
+.value-top ul.fl li:hover {
+    color: #fd6d37;
+}
+
+.value-top ul li.bor {
+
+    border-bottom: 2px solid #fd6d37;
+}
+
+.value-top ul.fr li:hover,
+.value-top ul li.bold {
+    font-weight: bold;
+}
+
+.value .empty {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+}

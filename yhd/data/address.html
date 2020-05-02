@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/data/address.css">
+</head>
+<body>
+    <div class="title">地址管理</div>
+    <div class="value">
+        <ul class="address-list">
+            <!-- 通过js动态填充 -->
+        </ul>
+        <div class="addAddress">➕ 添加新地址</div>
+    </div>
+    <div class="new">
+        <div class="add">
+            <div class="title clearFix">
+                <h5>添加新地址</h5>
+                <span class="exit">X</span>
+            </div>
+            <div class="data">
+                <div class="person row">
+                    <div class="first col-2">
+                        <span>*</span>收件人：
+                    </div>
+                    <div class="col">
+                        <input type="text" placeholder="请输入您的姓名">
+                    </div>
+                    <div class="hint"></div>
+                </div>
+                <div class="roughly row">
+                    <div class="first col-2">
+                        <span>*</span>收货地址：
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col county">
+                                <select>
+                                    <option>请选择县</option>
+                                    <option>北京</option>
+                                    <option>河北</option>
+                                </select>
+                            </div>
+                            <div class="col city">
+                                <select>
+                                    <option>请选择市/区</option>
+                                    <option>石家庄市</option>
+                                    <option>邯郸市</option>
+                                </select>
+                            </div>
+                            <div class="col district">
+                                <select>
+                                    <option>请选择区/县/街道</option>
+                                    <option>邯山区</option>
+                                    <option>永年区</option>
+                                </select>
+                            </div>
+                            <div class="col village">
+                                <select>
+                                    <option>请选择4级地址</option>
+                                    <option>罗成头街道</option>
+                                    <option>城区</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hint"></div>
+                </div>
+                <div class="indetail row">
+                    <div class="first col-2">
+                        <span>*</span>详细地址：
+                    </div>
+                    <div class="col">
+                        <input type="text" placeholder="街道名称/编号，楼宇名称，单位，房号">
+                    </div>
+                    <div class="hint"></div>
+                </div>
+                <div class="phone row">
+                    <div class="first col-2">
+                        <span>*</span>手机号码：
+                    </div>
+                    <div class="col row">
+                        <div class="col-4">
+                            <input type="text" maxlength="11" placeholder="常用手机号码">
+                        </div>
+                        <div class="hint"></div>
+                        <div class="col-2 or">或&nbsp;&nbsp;&nbsp; 固定电话：</div>
+                        <div class="col row phonecall">
+                            <div class="col-3">
+                                <input type="text" placeholder="区号">
+                            </div>-
+                            <div class="col">
+                                <input type="text" placeholder="电话号码">
+                            </div>-
+                            <div class="col-3">
+                                <input type="text" placeholder="分机号">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="label row">
+                    <div class="first col-2">
+                        地址标签：
+                    </div>
+                    <div class="col row">
+                        <div class="col-4">
+                            <input type="text" placeholder="最多二十个字哟" maxlength="20">
+                        </div>
+                        <div class="col">
+                            <div>家</div>
+                            <div>公司</div>
+                            <div>学校</div>
+                            <div>其他</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <button class="save">保存</button>
+                    <button class="closebox">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery1.12.4.js"></script>
+<script>
+    $(function(){
+        // 地址对象
+        function Address(name, county, city, district, village, indetail, phone){
+            this.name = name;
+            this.county = county;
+            this.city = city;
+            this.district = district;
+            this.village = village;
+            this.indetail = indetail;
+            this.phone = phone;
+        }
+
+        let $name = sessionStorage.getItem('user');
+        // 存储的函数
+        var json = JSON.parse(localStorage.getItem($name));
+
+        // 判断是添加还是修改  -2 添加   (-1 , 0...List下标)修改
+        let addressNum = -2;
+
+        // 点击编辑
+        $('.value .address-list').on('click', ' .address-item .item-right .compile', function () {
+            let address = undefined;
+            let index = $(this).parent().parent().index();
+            if(index === 0 && json.addressDefault !== undefined) {
+                address = json.addressDefault;
+                addressNum = -1;
+            } else {
+                address = json.addressList[json.addressDefault !== undefined ? index - 1 : index];
+                addressNum = json.addressDefault !== undefined ? index - 1 : index;
+            }
+            console.log(index);
+            // 往里面添加内容
+            $('.new .add .data .person input').val(address.name);
+            $('.new .add .roughly .row .col.county>select').val(address.county);
+            $('.new .add .roughly .row .col.city>select').val(address.city).css('display','block');
+            $('.new .add .roughly .row .col.district>select').val(address.district).css('display','block');
+            $('.new .add .roughly .row .col.village>select').val(address.village).css('display','block');
+            $('.new .add .indetail input').val(address.indetail);
+            $('.new .add .phone .col-4 input').val(address.phone);
+            $('.new .add .data .hint').each(function(){
+                $(this).empty();
+            });
+            $('.new').css('display', 'block');
+        });
+
+        // 点击删除
+        $('.value .address-list').on('click', ' .address-item .item-right .remove', function () {
+            let index = $(this).parent().parent().index();
+            if(index === 0 && json.addressDefault !== undefined) {
+                json.addressDefault = undefined;
+            } else {
+                json.addressList.splice((json.addressDefault !== undefined ? index - 1 : index),1);
+            }
+            localStorage.setItem($name , JSON.stringify(json));
+            $(this).parent().parent().remove();
+        });
+
+        // 设置为默认地址
+        $('.value .address-list').on('click', ' .address-item .item-right .default',function(){
+            let flag = $('.value .address-list .address-item:eq(0)').hasClass('default') ? -1 : 0;
+            let index = $(this).parent().parent().index() + flag;
+            // 判断是否有默认地址。如果有则将原来的默认地址添加只地址集合中
+            if(json.addressDefault !== undefined){
+                json.addressList.push(json.addressDefault);
+            }
+            // 将默认地址赋值
+            json.addressDefault = json.addressList[index];
+            // 在addressList中删除默认地址
+            json.addressList.splice(index,1);
+            // 更新内存
+            localStorage.setItem($name , JSON.stringify(json));
+            load();
+        });
+
+        // 动态加载数据
+        function load(){
+            // 将原有的数据删除
+            $('.value .address-list .address-item').remove();
+            if(json.addressDefault !== undefined){
+                let $element = $(`<li class="address-item row default">
+                    <div class="col item-left">
+                        <div class="item-title">
+                            <span class="name">` + json.addressDefault.name + `</span><span>收</span>
+                            <div class="box">
+                                <span class="iconfont">&#xe625;</span>
+                                <div class="box-value">` + json.addressDefault.name + `&nbsp;&nbsp;` + json.addressDefault.county +`</div>
+                            </div>
+                        </div>
+                        <div class="item-value">
+                            <strong class="county">` + json.addressDefault.county + `</strong>
+                            <strong class="city">` + json.addressDefault.city + `</strong>
+                            <strong class="district">` + json.addressDefault.district + `</strong>
+                            <strong class="village">` + json.addressDefault.village + `</strong>
+                            <span class="name">` + json.addressDefault.name + `</span>
+                            <p class="phone">` + json.addressDefault.phone + `</p>
+                        </div>
+                    </div>
+                    <div class="col-3 item-right">
+                        <p class="compile">编辑</p>
+                        <div class="remove iconfont">&#xe611;</div>
+                    </div>
+                </li>`);
+                $('.value .address-list').append($element) ;
+            }
+
+
+            $(json.addressList).each(function(){
+                let $element = $(`<li class="address-item row">
+                    <div class="col item-left">
+                        <div class="item-title">
+                            <span class="name">` + this.name + `</span><span>收</span>
+                            <div class="box">
+                                <span class="iconfont">&#xe625;</span>
+                                <div class="box-value">` + this.name + `&nbsp;&nbsp;` + this.county +`</div>
+                            </div>
+                        </div>
+                        <div class="item-value">
+                            <strong class="county">` + this.county + `</strong>
+                            <strong class="city">` + this.city + `</strong>
+                            <strong class="district">` + this.district + `</strong>
+                            <strong class="village">` + this.village + `</strong>
+                            <span class="name">` + this.name + `</span>
+                            <p class="phone">` + this.phone + `</p>
+                        </div>
+                    </div>
+                    <div class="col-3 item-right">
+                        <p class="compile">编辑</p>
+                        <p class="default">设为默认地址</p>
+                        <div class="remove iconfont">&#xe611;</div>
+                    </div>
+                </li>`);
+                $('.value .address-list').append($element) ;
+            });
+
+        }
+        load();
+
+        // 点击添加地址
+        $('.value .addAddress').click(function () {
+            $('.new .add .data .person input').val('');
+            $('.new .add .roughly .row .col.county>select').val('请选择县');
+            $('.new .add .roughly .row .col.city>select').css('display','none').val('请选择市/区');
+            $('.new .add .roughly .row .col.district>select').css('display','none').val('请选择区/县/街道');
+            $('.new .add .roughly .row .col.village>select').css('display','none').val('请选择4级地址');
+            $('.new .add .indetail input').val('');
+            $('.new .add .phone .col-4 input').val('');
+            $('.new .add .data .hint').each(function(){
+                $(this).empty();
+            });
+            $('.new').css('display', 'block');
+            addressNum = -2;
+        });
+
+        $('.new .title .exit').click(exit);
+        $('.new .add .data .bottom .closebox').click(exit);
+        function exit() {
+            $('.new').css('display', 'none')
+        }
+
+        // 保存 添加或修改
+        $('.new .add .data .bottom .save').click(function () {
+            let name = $('.new .add .data .person input').val();
+            let county = $('.new .add .roughly .row .col.county>select').val();
+            let city = $('.new .add .roughly .row .col.city>select').val();
+            let district = $('.new .add .roughly .row .col.district>select').val();
+            let village = $('.new .add .roughly .row .col.village>select').val();
+            let indetail = $('.new .add .indetail input').val();
+            let phone = $('.new .add .phone .col-4 input').val();
+            if(name === ''){
+                $('.new .add .data .person .hint').text('请您填写收货人姓名');
+                return;
+            } else {
+                $('.new .add .data .person .hint').text('');
+            }
+            if(county === '请选择县' || city ==='请选择市/区' || district === '请选择区/县/街道' || village === '请选择4级地址') {
+                $('.new .add .data .roughly .hint').text('请您填写完整的地址');
+                return;
+            } else {
+                $('.new .add .data .roughly .hint').text('');
+            }
+            if(indetail === '') {
+                $('.new .add .data .indetail .hint').text('请您填写详细的地址信息');
+                return;
+            } else {
+                $('.new .add .data .indetail .hint').text('');
+            }
+            if(phone === '' || !/13[6-8]\d{8}/.test(phone)) {
+                $('.new .add .data .phone .hint').text('请您填写正确手机号码');
+                return;
+            } else {
+                $('.new .add .data .phone .hint').text('请您填写正确手机号码');
+            }
+            let address = new Address(name, county, city, district, village, indetail, phone);
+            if(addressNum === -2) { // 添加
+                json.addressList.push(address);
+            } else if(addressNum === -1) { // 修改默认
+                json.addressDefault = address;
+            } else { // 修改list
+                json.addressList[addressNum] = address;
+            }
+            localStorage.setItem($name , JSON.stringify(json));
+            addressNum = -2;
+            exit();
+            load();
+        });
+
+        // 地址
+        $('.new .add .roughly .row .col.county>select').change(function(){
+            $('.new .add .roughly .row .col.city>select').css('display','block');
+        });
+        $('.new .add .roughly .row .col.city>select').change(function(){
+            $('.new .add .roughly .row .col.district>select').css('display','block');
+        });
+        $('.new .add .roughly .row .col.district>select').change(function(){
+            $('.new .add .roughly .row .col.village>select').css('display','block');
+        });
+        // 标签
+        $('.new .add .data .label .row .col div').click(function () {
+            $('.new .add .data .label .row .col div').each(function () {
+                $(this).css({
+                    color: '#999',
+                    borderColor: '#999'
+                });
+            });
+            $(this).css({
+                color: '#f40',
+                borderColor: '#f40'
+            });
+            $('.new .add .data .label input').val($(this).text());
+        });
+    })
+</script>
+</html>

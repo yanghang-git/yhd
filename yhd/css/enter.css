@@ -1,0 +1,343 @@
+@import 'Reset.css';
+
+body {
+    background-color: #fcfcfc;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/enter/iconfont.eot');
+    src: url('../font/enter/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/enter/iconfont.woff2') format('woff2'),
+    url('../font/enter/iconfont.woff') format('woff'),
+    url('../font/enter/iconfont.ttf') format('truetype'),
+    url('../font/enter/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 头部 */
+.header-top {
+    background: #fff;
+    font-size: 12px;
+    box-shadow: rgba(0,0,0,.3) 0 0 8px;
+}
+
+.header-top .col>div{
+    display: inline-block;
+}
+
+.header-top .login {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.header-top .login a{
+    color: #999;
+}
+
+.header-top .login a:hover {
+    color: #f40;
+}
+
+.header-top .help a:hover {
+    color: #f40;
+}
+.header-top .help {
+    position: relative;
+}
+.header-top .help:hover ul {
+    display: block;
+}
+
+.header-top .help ul{
+    position: absolute;
+    width: 70px;
+    border: 1px solid #999;
+    left: -15px;
+    display: none;
+    z-index: 100;
+}
+
+.header-top .help ul li{
+    border-bottom: 1px solid #f3f3f3;
+    text-align: center;
+    padding: 3px 0;
+}
+
+/* 中间 */
+.main {
+    margin-top: 40px;
+    position: relative;
+}
+
+.main .img {
+    margin-top: 30px;
+}
+.main .info {
+    margin: 0 80px;
+    background: #fff;
+    padding: 40px 40px;
+    position: relative;
+}
+.main .info div {
+    max-width: 100%;
+    padding: 0;
+}
+
+.main .info .main-top {
+    margin-bottom: 10px;
+}
+
+.main .info .main-top .hint {
+    display: none;
+    width: 100%;
+    background: #fff7d1;
+    border: 1px solid #e5debc;
+    color: #999;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+}
+
+.main .info .main-top .hint .warn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255,0,0,.4);
+    text-align: center;
+    margin-top: -10px;
+    border-radius: 50%;
+    color: rgba(255,0,0,.4);
+    font-weight: bold;
+    line-height: 14px;
+    margin-right: 6px;
+}
+
+.main .info .main-top .title {
+    margin-bottom: 10px;
+}
+
+.main .info .main-top .title span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .info .main-top .title a {
+    display: block;
+    float: right;
+    text-align: center;
+    color: #0056b3;
+    font-size: 13px;
+}
+
+.main .info .main-top a:hover {
+    color: #f40;
+}
+
+.main .info .main-top form input[type='text'],
+.main .info .main-top form input[type='password'] {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+    font-size: 15px;
+}
+
+
+.main .info .main-top form input[type='text']:focus,
+.main .info .main-top form input[type='password']:focus {
+    border: 1px solid #666;
+    outline-style: none;
+}
+
+.main .info .main-top form div.user,
+.main .info .main-top form div.pwd {
+    position: relative;
+}
+
+.main .info .main-top form div.user div,
+.main .info .main-top form div.pwd div {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 22px;
+    color: #999;
+}
+
+
+.main .info .main-top form .middle {
+    color: #999;
+    padding: 12px 0;
+}
+
+.main .info .main-top form .middle input[type='checkbox'] {
+    width: 15px;
+    height: 15px;
+}
+
+.main .info .main-top form .middle>span {
+    padding-left: 6px;
+    position: relative;
+    top: -3px;
+    font-size: 14px;
+}
+
+.main .info .main-top form .middle>a {
+    padding-left: 6px;
+    position: relative;
+    top: -3px;
+    font-size: 14px;
+    color: #999;
+    float: right;
+}
+.main .info .main-top form .middle a:hover {
+    color: #999;
+}
+
+.main .info .main-top form .middle>p{
+    margin: 5px 0;
+}
+
+.main .info .main-top form .middle>p>a{
+    color:#0056b3;
+}
+
+.main .info .main-top form .middle>p>a:hover{
+    color:#f40;
+}
+
+.main .info .main-top form input[type='button']{
+    width: 100%;
+    height: 50px;
+    background: #f40;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+
+.main .info .main-button p {
+    font-size: 14px;
+}
+
+.main .info .main-button .row{
+    padding: 15px;
+    color: #999;
+    font-size: 14px;
+}
+.main .info .main-button .row div:first-of-type a,
+.main .info .main-button .row div:nth-of-type(2) a,
+.main .info .main-button .row div:nth-of-type(3) a,
+.main .info .main-button .row div:nth-of-type(4) a{
+    font-size: 20px;
+}
+
+.main .info .main-button .row div:first-of-type a {
+    color: #10A8ff;
+}
+
+.main .info .main-button .row div:nth-of-type(2) a {
+    color: #c81825;
+}
+
+.main .info .main-button .row div:nth-of-type(3) a {
+    color: #0c0;
+}
+
+.main .info .main-button .row div:nth-of-type(4) a {
+    color: #dd2e37;
+}
+
+.main .info .main-button .row a {
+    display: block;
+    color: #666;
+    padding: 0;
+}
+
+.main .change {
+    float: right;
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+    border-color: transparent rgba(0,0,0,.1) rgba(0,0,0,.1) transparent;
+    border-width: 30px;
+    border-style: solid;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.main .change:hover {
+    border-color: transparent rgba(0,0,0,.2) rgba(0,0,0,.2) transparent;
+}
+
+.main .QRcode {
+    position: relative;
+    display: none;
+    background: #fff;
+    margin: 0 80px;
+    padding: 40px 40px 50px;
+}
+.main .QRcode p {
+    text-align: center;
+    font-size: 14px;
+}
+.main .QRcode img {
+    display: block;
+    margin: 20px auto;
+    max-width: 60%;
+    border: 1px solid #666;
+}
+.main .QRcode p:last-of-type a:hover {
+    color:#f40;
+}
+
+.main .QRcode p:first-of-type{
+    font-size: 16px;
+    font-weight: bold;
+}
+.main .QRcode p:first-of-type a{
+    color: #f40;
+}
+
+.main .QRcode .refresh {
+    display: none;
+    position: absolute;
+    top: 84px;
+    left: 112px;
+    width: 218px;
+    height: 218px;
+    background: rgba(255,255,255,.8);
+}
+.main .QRcode .refresh P {
+    margin-top: 60px;
+    font-size: 12px;
+}
+.main .QRcode .refresh div {
+    padding: 8px 20px;
+    background: #f40;
+    margin-left: 45px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+    /* 底部 */
+.button {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.button p {
+    line-height: 25px;
+}
+

@@ -1,0 +1,85 @@
+@import '../Reset.css';
+
+body {
+    margin: 30px;
+    background: #fff;
+}
+
+.top {
+    padding: 15px;
+    border: 1px solid #c9c9c9;
+}
+.top .img {
+    width: 10%;
+    border: 1px solid #c9c9c9;
+}
+.top .img img {
+    width: 100%;
+}
+.top .info {
+    margin-left: 10px;
+    color: #333;
+}
+.top .info>*{
+    margin: 10px 0 ;
+}
+.top .info .grade .outer {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 40px;
+    height: 14px;
+    border: 1px solid #f40;
+    background: linear-gradient(#f7f6ee, #e3e3e3 , #f7f6ee);
+    border-radius: 2px;
+    margin-right: 3px;
+}
+.top .info .grade .outer .within {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 30%;
+    height: 120%;
+    border-radius: 2px;
+    background: #ff5617;
+}
+.top .info p:last-of-type {
+    color: #f40;
+}
+
+
+.bottom ul {
+    margin-top: 20px;
+    border: 1px solid #c9c9c9;
+}
+
+.bottom ul li {
+    max-width: 100%;
+    padding: 30px;
+    border-bottom: 1px solid #c9c9c9;
+    margin: 0;
+}
+.bottom ul li:last-of-type {
+    border-bottom: none;
+}
+.bottom ul li .flag {
+    font-size: 16px;
+    color: #00cc00;
+    font-weight: bold;
+    text-align: center;
+}
+.bottom ul li .col-2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+.bottom ul li .change {
+    color: #fff;
+    background: linear-gradient(#fd9937, #f36004);
+    border: 1px solid #f40;
+    width: 80px;
+    float: right;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}

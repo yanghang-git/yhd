@@ -1,0 +1,16 @@
+@import '../Reset.css';
+
+body {
+    margin: 25px;
+    background: #fff;
+}
+
+.empty img {
+    display: block;
+    margin: 100px auto 50px;
+}
+
+.empty p {
+    text-align: center;
+    line-height: 25px;
+}

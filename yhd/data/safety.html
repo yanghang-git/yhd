@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/data/safety.css">
+</head>
+<body>
+    <div class="title">
+        <h5>安全中心</h5>
+    </div>
+    <div class="top clearFix">
+        <div class="img fl"><img src="http://home.yhd.com/statics/member/images/defaultUserPic.jpg" alt=""></div>
+        <div class="info fl">
+            <p class="name">name</p>
+            <div class="grade">
+                您的安全评分为：<div class="outer"><div class="within"></div></div>30分
+            </div>
+            <p>建议您启动全部安全设置，以保障账户及资金安全。</p>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <ul>
+            <li class="row password">
+                <div class="col-1 flag">✔</div>
+                <div class="col-2">修改密码</div>
+                <div class="col-7">经常的更换您的账号密码，并且不要和其他账号共用同一个密码</div>
+                <a href="changePassword.html" class="change">修改密码</a>
+            </li>
+            <li class="row email">
+                <div class="col-1 flag">❕</div>
+                <div class="col-2">绑定邮箱</div>
+                <div class="col-7">邮箱将是您的有效身份证，在保证安全的同时还可以提供更便捷的订单提醒服务</div>
+                <a href="#" class="change">立即绑定</a>
+            </li>
+            <li class="row phone">
+                <div class="col-1 flag">✔</div>
+                <div class="col-2">绑定手机</div>
+                <div class="col-7">绑定手机后，修改密码将必须要通过手机验证，避免他人恶意修改您的密码</div>
+                <a href="changePhone.html" class="change">修改手机</a>
+            </li>
+            <li class="row logout">
+                <div class="col-1 flag">❕</div>
+                <div class="col-2">注销账户</div>
+                <div class="col-7">请拨打客服电话400-007-1111注销账户</div>
+                <a href="#" class="change">账户注销须知</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../js/jquery1.12.4.js"></script>
+<script>
+    $(function () {
+
+        let userName = sessionStorage.getItem('user');
+
+        $('.top .info .name').text(userName);
+
+
+    });
+</script>
+
+
+</html>

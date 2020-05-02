@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/data/orderForm.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top">
+        <div class="total">
+            <span class="title pitch">所有订单</span>
+        </div><span>|</span>
+
+        <div class="wait">
+            <span class="title">待付款</span>
+            <span class="num">0</span>
+        </div><span>|</span>
+
+        <div class="buy">
+            <span class="title">待收货</span>
+            <span class="num">0</span>
+            <div class="hidden-box">
+            </div>
+        </div><span>|</span>
+
+        <div>
+            <span class="title">已完成</span>
+
+        </div><span>|</span>
+
+        <div>
+            <span class="title">已取消</span>
+
+        </div>
+    </div>
+
+
+    <div class="value">
+
+
+    </div>
+
+    <div class="empty">
+        <img src="http://img.yihaodianimg.com/myyhd/member/images/my_order/ordersEmpty.jpg?2809438" alt="">
+        <p>最近暂无订单</p>
+    </div>
+</body>
+<script src="../js/jquery1.12.4.js"></script>
+<script>
+    $(function() {
+        let userName = sessionStorage.getItem('user');
+
+        let user = JSON.parse(localStorage.getItem(userName));
+
+        // 如果没用购买记录 也没有订单记录则默认显示为暂无订单。
+        if(user.orderFormList.length !== 0 || user.buyList.length !== 0){
+            $('.value').css('display', 'block');
+            $('.empty').css('display', 'none');
+        }
+
+        user.buyList.push(user.orderFormList[0]);
+
+        function orderFromDom(orderFrom, flag){
+            return $(`<div class="item row">
+                        <div class="col-4">
+                            <p>配送方式</p>
+                            <p class="box">第三方配送</p>
+                            <p class="font-color">` + (flag ? '购买' : '发货') + `时间：` + orderFrom.date + `</p>
+                            <p>工作日、双休日与节假日均可` + (flag ? '送' : '发') + `货</p>
+                        </div>
+                        <div class="col">
+                            <p class="title">商家：` + orderFrom.shopNames + `</p>
+                            <div class="row">
+                                <div class="col-2 img"><img src="`+orderFrom.pricture+`" alt=""></div>
+                                <div class="col main">
+                                    <div class="main-value">` + orderFrom.designation + `</div>
+                                    <p>支持7天无理由退货</p>
+                                </div>
+                                <div class="col-2 money">￥`+ orderFrom.monovalent +`</div>
+                                <div class="col-2 num">x ` + orderFrom.quantity + `</div>
+                                <div class="col-2 state">` + (flag ? '有货' : '已发货') + `</div>
+                            </div>
+                        </div>
+                    </div>`);
+        }
+        // 填充待付款
+        function fullOrderForm(){
+            $(user.orderFormList).each(function () {
+                $('.value').append(orderFromDom(this, true));
+            })
+        }
+
+        // 填充购买
+        function fullBuy(){
+            $(user.buyList).each(function () {
+                $('.value').append(orderFromDom(this, false));
+            })
+        }
+        // 填充全部
+        function fullAll(){
+            if(user.orderFormList.length !== 0){
+                $('.value').append($('<h5>待付款</h5>'));
+                fullOrderForm();
+            }
+            if(user.buyList.length !== 0){
+                $('.value').append($('<h5>待收货</h5>'));
+                fullBuy();
+            }
+        }
+        fullAll();
+        // 点击待收货
+        $('.top .buy').click(function () {
+            $('.value').children().remove();
+            fullBuy();
+        });
+        // 点击待付款
+        $('.top .wait').click(function () {
+            $('.value').children().remove();
+            fullOrderForm();
+        });
+        // 点击所有订单
+        $('.top .total').click(function () {
+            $('.value').children().remove();
+            console.log($('.value .item')[0]);
+            fullAll();
+        });
+
+        $('.top div').click(function() {
+            $('.top div .title').removeClass('pitch');
+            $(this).children('.title').addClass('pitch');
+        });
+
+
+    });
+</script>
+
+</html>

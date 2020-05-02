@@ -1,0 +1,132 @@
+@import '../Reset.css';
+
+body {
+    background: #fff;
+}
+
+.top {
+    margin: 35px;
+}
+.top>div {
+    display: inline-block;
+    position: relative;
+}
+.top>span {
+    margin: 10px;
+    color: #f3f3f3;
+}
+.top>div .title {
+    font-size: 16px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.top>div .title:hover {
+    color: #f40;
+}
+.top>div .title.pitch{
+    color: #f40;
+    border-bottom: 1.5px solid #f40;
+}
+.top>div .num {
+    color: #f40;
+    font-size: 16px;
+}
+
+.top>div .hidden-box {
+    position: absolute;
+    top: 65px;
+    left: 35px;
+    width: 100%;
+}
+.top>div.total .hidden-box,
+.top>div.wait .hidden-box {
+    display: none;
+}
+
+
+.value {
+    display: none;
+    margin: 35px;
+}
+.value .item {
+    border: 1px solid #e8e8e8;
+    margin: 0 0 15px;
+    background: #f9f9f9;
+}
+.value .item .col-4 {
+    border-right: 1px solid #e8e8e8;
+    padding: 13px 30px 23px;
+}
+.value .item .col-4 p {
+    margin: 8px 0;
+}
+.value .item .col-4 p:first-of-type {
+    font-size: 13px;
+}
+.value .item .col-4 p.box::after {
+    content: '√';
+    display: block;
+    position: absolute;
+    top: 10px;
+    color: #fff;
+    right: -5px;
+    font-size: 5px;
+    font-weight: bold;
+    background: #f40;
+    line-height: 20px;
+    width: 20px;
+    border-radius: 60%;
+}
+.value .item .col-4 p.box {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #f40;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.value .item .col-4 .font-color {
+    color: #999;
+}
+
+.value .item>.col>.row>.money {
+    font-weight: bold;
+}
+.value .item>.col>.row>.img img {
+    width: 80px;
+}
+
+.value .item>.col>.row {
+    margin-top: 10px;
+}
+
+.value .item>.col {
+    padding: 13px 30px 23px;
+}
+
+.value .item .col .title {
+    margin: 8px;
+    font-weight: bold;
+}
+.value .item>.col>.row>.main p {
+    padding-top: 5px;
+    color: #999;
+}
+
+
+    /* 空 */
+.empty {
+    margin-top: 50px;
+}
+.empty img {
+    display: block;
+    margin: 0 auto;
+}
+.empty p {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-left:25px;
+}

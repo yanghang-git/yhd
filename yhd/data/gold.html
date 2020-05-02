@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/data/gold.css">
+</head>
+<body>
+    <div class="title">
+        <h5>1号金币</h5>
+    </div>
+
+    <div class="top row">
+        <a href="#">金币规则</a>
+        <div class="col top-left">
+            <span>可用1号金币</span>
+            <span class="num">0</span>
+            <a href="#">金币商城 ></a>
+        </div>
+        <div class="col top-right">
+            <span>2020-12-31 过期1号金币</span>
+            <span class="num">0</span>
+        </div>
+    </div>
+
+    <div class="value">
+        <div class="value-top clearFix">
+            <ul class="fl">
+                <li class="bor">金币明细</li>
+                <li>金币获取</li>
+                <li>金币消费</li>
+            </ul>
+            <ul class="fr">
+                <li class="bold">当前金币明细</li>
+                <li>历史金币明细</li>
+            </ul>
+        </div>
+
+        <div class="empty">
+            暂无金币变化
+        </div>
+    </div>
+</body>
+
+<script src="../js/jquery1.12.4.js"></script>
+<script>
+    $(function () {
+        $('.value-top ul.fl li').click(function(){
+            $('.value-top ul.fl li').each(function () {
+               $(this).removeClass('bor');
+            });
+            $(this).addClass('bor');
+        });
+
+        $('.value-top ul.fr li').click(function(){
+            $('.value-top ul.fr li').each(function () {
+                $(this).removeClass('bold');
+            });
+            $(this).addClass('bold');
+        });
+
+    })
+</script>
+</html>

@@ -1,0 +1,109 @@
+@import '../Reset.css';
+
+body {
+    margin: 25px;
+    background: #fff;
+}
+
+.box {
+    width: 80%;
+}
+
+.box .right {
+    float: right;
+}
+
+.box .right input {
+    display: block;
+}
+
+.box .right * {
+    margin: 10px 0;
+}
+
+.box .right .email input {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.box .right .phone a {
+    color: #f40;
+}
+
+.box .right .email a {
+    color: #06c;
+}
+
+.box .right .email .bottom {
+    padding: 5px;
+    background: #f40;
+    color: #fff;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+.box .left {
+    width: 60%;
+}
+.box .left>div {
+    margin: 20px 0;
+}
+.box .left span {
+    float: left;
+    padding-right: 10px;
+    width: 80px;
+    text-align: right;
+    line-height: 32px;
+}
+
+.box .left .img img {
+    width: 80px;
+}
+.box .left .img .img-img {
+    position: relative;
+}
+.box .left .img .img-img div {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    background: rgba(0, 0, 0, .2);
+    width: 80px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.box .left>div i{
+    color: red;
+}
+
+.box .left input[type='text'] {
+    padding: 5px;
+    width: 210px;
+}
+
+.box .left input[type='radio'] {
+    margin-top: 10px;
+}
+
+.box .left .birthday span {
+    line-height: 44px;
+}
+.box .left select:first-of-type {
+    margin-left: 0;
+}
+.box .left select {
+    padding: 5px;
+    margin-top: 7px;
+    margin-left: 15px;
+}
+
+.box .left .save button {
+    background: #f40;
+    border: 1px solid red;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 80px;
+}
