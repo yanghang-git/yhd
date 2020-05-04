@@ -22,7 +22,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web/web-main-maven" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -35,11 +35,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA\SoundCode\yhd\ZhangHeng" />
+      <recent name="E:\JAVA\SoundCode\yhd\SunXianYuan\SuperSingle" />
+      <recent name="E:\JAVA\SoundCode\yhd\SunXianYuan\NewConsignee" />
       <recent name="E:\JAVA\SoundCode\yhd\font\data\address" />
       <recent name="E:\JAVA\SoundCode\yhd\font\data_index" />
-      <recent name="E:\JAVA\SoundCode\yhd\font\enter" />
-      <recent name="E:\JAVA\SoundCode\yhd\css" />
-      <recent name="E:\JAVA\SoundCode\yhd\font\index" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\JAVA\SoundCode\yhd\data" />
@@ -89,6 +89,9 @@
       <workItem from="1588155915260" duration="35000" />
       <workItem from="1588214952612" duration="2051000" />
       <workItem from="1588217158827" duration="206000" />
+      <workItem from="1588499010645" duration="14672000" />
+      <workItem from="1588559181641" duration="6520000" />
+      <workItem from="1588589106031" duration="7800000" />
     </task>
     <servers />
   </component>

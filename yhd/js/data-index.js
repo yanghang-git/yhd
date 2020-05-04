@@ -19,7 +19,6 @@ $(function () {
 
     // 如果没用购买记录 也没有订单记录则默认显示为暂无订单。
     if($user.orderFormList.length !== 0 || $user.buyList.length !== 0){
-        console.log(1);
         $('.main .panel-value .value-main .value').css('display', 'block');
         $('.main .panel-value .value-main .empty').css('display', 'none');
     }

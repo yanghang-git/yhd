@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>购物车</title>
+		<link rel="stylesheet" href="css/shoppingTrolley.css" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+		<script type="text/javascript" src="js/shoppingTrolley.js" ></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/Popt.js"></script>
+		<script src="js/cityJson.js"></script>
+		<script src="js/citySet.js"></script>
+		<style type="text/css">
+			* { -ms-word-wrap: break-word; word-wrap: break-word; }
+			html { -webkit-text-size-adjust: none; text-size-adjust: none; }
+			/*html, body {height:100%;width:100%; }*/
+			html, body, h1, h2, h3, h4, h5, h6, div, ul, ol, li, dl, dt, dd, iframe, textarea, input, button, p, strong, b, i, a, span, del, pre, table, tr, th, td, form, fieldset, .pr, .pc { margin: 0; padding: 0; word-wrap: break-word; font-family: verdana,Microsoft YaHei,Tahoma,sans-serif; *font-family: Microsoft YaHei,verdana,Tahoma,sans-serif; }
+			body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc, em, del { font-style: normal;  }
+			ul, ol, dl { list-style: none; }
+			._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; background-color: white;}
+			._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+			._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+			._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+			.citySel { background-color: #56b4f8; color: #fff !important; }
+			._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+			._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+			._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+			.AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+		</style>
+	</head>
+	<body id="commodity">
+		<!--购物车头部-->
+		<div id="tou">
+			<div class="tou_zhong">
+				<!--头部左边-->
+				<a href="../index.html" class="a_shouye">
+					<i class="iconfont">&#xe660;</i>
+					<span>1号店首页</span>
+				</a>
+				<!--头部右边-->
+				<div class="tou_right">
+					<ul>
+						<li class="tou_has_child">
+							<div class="tou_login">
+								<span>Hi,</span>
+								<a href="#" class="tou_login_name">手里没王</a>
+								
+								<a href="#" class="tou_vip  tou_vip1">新晋</a>
+								<a href="register.html" class="zhuce">注册</a>
+								<i class="iconfont">&#xe731;</i>
+							</div>
+							
+						</li>
+						<li>
+							<div class="tou_menu">
+								<a href="#">
+									<i class="iconfont">&#xe63f;</i>
+									我的订单
+								</a>
+							</div>
+						</li>
+						<li class="tou_kehu">
+							<div class="tou_menu">
+								<a href="#">客户服务</a>
+								<i class="iconfont">&#xe731;</i>
+							</div>
+							<!--隐藏的div-->
+							<div class="tou_menu_yincang">
+								<a href="#" title="包裹跟踪">包裹跟踪</a>
+								<a href="#" title="在线退换货">在线退换货</a>
+							</div>
+						</li>
+						<li class="tou_has_child">
+							<div class="tou_title">
+								<a href="#">
+									<i class="iconfont">&#xe67e;</i>
+									APP下载
+								</a>
+							</div>
+							<!--隐藏的div-->
+							<div class="tou_title_yincang">
+								<div class="triangle"></div>
+								<p>扫描二维码</p>
+								<p>下载1号店APP</p>
+								<a href="#">
+									<img src="img/qryhd.png"/>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--中部主要内容-->
+		<div class="yhd_cart_content">
+			<!--logo行-->
+			<div class="cart_header  wrap clearfix">
+
+				<h1>
+					<a href="#" class="logo"></a>
+					<a href="#" class="logo_txt"></a>
+				</h1>
+				<!--<div class="area_wrapper">
+					<span class="area_txt">配送至：</span>
+					<div class="mod_area_select">
+						<div class="address">
+							<span class="val_text">
+								上海
+								<i>|</i>
+								宝山区
+								<i>|</i>
+								城市工业园区
+							</span>
+							<i class="btn_arrow"></i>
+						</div>
+						<div class="tab_box none">
+							<a href="#" class="close"></a>
+							<div class="tabs clearfix">
+								<span>
+									<em>上海</em>
+								</span>
+								<span>
+									<em>宝山区</em>
+								</span>
+								<span>
+									<em>城市工业园区</em>
+								</span>
+							</div>
+							<div class="area_box">
+								<div class="item first_area">
+									<dl class="clearfix">
+										<dt>华北：</dt>
+										<dd value="1" name="cart_province">北京</dd>
+										<dd value="3" name="cart_province">天津</dd>
+										<dd value="5" name="cart_province">河北</dd>
+										<dd value="6" name="cart_province">山西</dd>
+										<dd value="11" name="cart_province">内蒙古</dd>
+									</dl>
+									<dl class="clearfix">
+										<dt>华东：</dt>
+										<dd value="2" name="cart_province">上海</dd>
+										<dd value="12" name="cart_province">江苏</dd>
+										<dd value="15" name="cart_province">浙江</dd>
+										<dd value="14" name="cart_province">安徽</dd>
+										<dd value="16" name="cart_province">福建</dd>
+										<dd value="13" name="cart_province">山东</dd>
+									</dl>
+									<dl class="clearfix">
+										<dt>华南：</dt>
+										<dd value="19" name="cart_province">广东</dd>
+										<dd value="20" name="cart_province">广西</dd>
+										<dd value="23" name="cart_province">海南</dd>
+										
+									</dl>
+									<dl class="clearfix">
+										<dt>华中：</dt>
+										<dd value="21" name="cart_province">江西</dd>
+										<dd value="7" name="cart_province">河南</dd>
+										<dd value="17" name="cart_province">湖北</dd>
+										<dd value="18" name="cart_province">湖南</dd>
+										
+									</dl>
+									<dl class="clearfix">
+										<dt>西南：</dt>
+										<dd value="4" name="cart_province">重庆</dd>
+										<dd value="22" name="cart_province">四川</dd>
+										<dd value="24" name="cart_province">贵州</dd>
+										<dd value="25" name="cart_province">云南</dd>
+										<dd value="26" name="cart_province">西藏</dd>
+									</dl>
+									<dl class="clearfix">
+										<dt>西北：</dt>
+										<dd value="27" name="cart_province">陕西</dd>
+										<dd value="28" name="cart_province">甘肃</dd>
+										<dd value="29" name="cart_province">青海</dd>
+										<dd value="30" name="cart_province">宁夏</dd>
+										<dd value="31" name="cart_province">新疆</dd>
+									</dl>
+									<dl class="clearfix">
+										<dt>东北：</dt>
+										<dd value="8" name="cart_province">辽宁</dd>
+										<dd value="9" name="cart_province">吉林</dd>
+										<dd value="10" name="cart_province">黑龙江</dd>
+										
+									</dl>
+								</div>
+								<div class="item second_area hide"></div>
+								<div class="item third_area hide"></div>
+							</div>
+						</div>
+					</div>-->
+				
+				<!--</div>-->
+				<!--选地址-->
+				<span>配送至：</span>
+				<div class="chajian">
+					<input type="text" id="city" />
+				</div>
+				
+				<!--<div class="dizhi">
+					<div class="xiala">
+	                    					<span>河北邯郸</span>
+	                    					<i class="iconfont">&#xe731;</i>
+	                    				</div>
+	                    				<div class="roughly ">
+						                    <div class="first col-2">
+						                        	选择地址：
+						                    </div>
+						                    <div class="col">
+						                        <div class="row">
+						                            <div class="col county">
+						                                <select>
+						                                    <option>请选择省</option>
+						                                    <option>北京</option>
+						                                    <option>河北</option>
+						                                </select>
+						                            </div>
+						                            <div class="col city">
+						                                <select>
+						                                    <option>请选择市/区</option>
+						                                    <option>石家庄市</option>
+						                                    <option>邯郸市</option>
+						                                </select>
+						                            </div>
+						                            <div class="col district">
+						                                <select>
+						                                    <option>请选择区/县</option>
+						                                    <option>邯山区</option>
+						                                    <option>永年区</option>
+						                                </select>
+						                            </div>
+						                            <div class="col village">
+						                                <select>
+						                                    <option>请选择4级地址</option>
+						                                    <option>罗成头街道</option>
+						                                    <option>城区</option>
+						                                </select>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="hint"><a href="#">x</a></div>
+						                </div>
+				</div>-->
+				<!--搜索框-->
+				<div class="search">
+					<input type="text" id="keyword"  placeholder="请输入关键词"/>
+					<a href="" class="search_btn iconfont">&#xe611;</a>
+				</div>
+			</div>
+			<!--当没有登录或购物车为空时-->
+			<div class="empty">
+				<div class="no_prod offline clearfix">
+					<div class="img_wrap">
+						<img src="img/offline.gif" width="300px" height="300px" />
+					</div>
+					<div class="info">
+						<p>
+							购物车还是空的呢，快去采购吧~
+							<br />
+							或者登录查看之前加入的商品。
+						</p>
+						<div class="btn_box">
+							<a href="enter.html" class="confirm">去登录</a>
+							<a href="index.html" class="cancel">去逛逛</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--当购物车为空时-->
+			<div class="empty_SignIn">
+				<div class="no_prod1">
+					<div class="img_wrap1">
+						<img src="//img.yihaodianimg.com/cart/shopping/pc/images/no_goods.gif" width="300px" height="300px" />
+					</div>
+					<div class="info1">
+						<p>购物车还是空的呢，快去采购吧~</p>
+						<div class="btn_box1">
+							<a href="index.html" class="confirm1">去逛逛</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<!--商品展示start-->
+			<div class="Commoditydisplay">
+				<div class="wrap">
+					<div class="cart_list_header cart_wrap cart_tit">
+						<span class="checkbox">
+
+							<input type="checkbox" class="check check_all" />
+							全选
+						</span>
+						<span class="tit">商品信息</span>
+						<span class="price">单价（元）</span>
+						<span class="num">数量</span>
+						<span class="total">小计（元）</span>
+						<span class="act">操作</span>
+					</div>
+					<div class="cart_list">
+
+						<!--商品-->
+						<div class="cart_list_wrap">
+							<ul class="cart_item activity" id="ulId">
+
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--结算工具栏-->
+			<div class="settling_column_bar none ">
+				<div class="pay_tools_bar">
+					<div class="pay_tools_inner clearfix">
+						<!--左-->
+						<div class="pay_tools_l clearfix">
+							<span class="select_all checkbox clearfix">
+
+								<input type="checkbox" class="check check_all pay_checkbox"/>
+								<label class="all_checked_label">
+									全选，（共
+									<b>0</b>
+									件）
+								</label>
+							</span>
+							| 
+							<span>
+								<a href="#" class="l_a_tool lt_delete">批量删除</a>
+							</span>
+						</div>
+						<!--右-->
+						<div class="pay_tools_r clearfix">
+							<a href="../SunXianYuan/NewConsignee/SaveConsigneeInfo.html" class="checkout_btn">去结算</a>
+							<div class="r_price_total r_control_tip">
+								合计：
+								<span class="rpt_count">
+									￥
+									<b>0</b>
+								</span>
+								<i class="iconfont rpt_detail arrow_turn"></i>
+							</div>
+							<div class="r_prod_view r_control_tip">
+								<span class="rpv_count">
+									已选商品
+									<b>0</b>
+									件
+								</span>
+								<a href="#" class="pvw">预览</a>
+							</div>
+						</div>
+					</div>
+					<!--总价隐藏div-->
+					<div class="pay_tips pay_total_tips">
+						<p>
+							原价：
+							<span>
+								￥
+								<b class="yuanjia">269.00</b>
+							</span>
+						</p>
+						<p>
+							优惠：
+							<span>
+								￥
+								<b>0.00</b>
+							</span>
+						</p>
+						<p>运费：不含，以结算页为准</p>
+					</div>
+				</div>
+			</div>
+			<!--猜您喜欢-->
+			<div class="bottom_wrap">
+				<div class="sale_prod_list"></div>
+				<div class="sale_prod_list">
+					<div class="sale_prod_tit">
+						<h4 class="hot_sale_tit">
+							<i class="iconfont"></i>
+							猜您喜欢
+						</h4>
+						<p>实时推荐最适合您的商品</p>
+					</div>
+					<div class="sale_prod_cont cheap_prod hot_sale_list">
+						<a href="#" class="control_btn left_arrow unable">
+							<i class="iconfont" class="left_arrow_i">&#xe629;</i>
+						</a>
+						<a href="#" class="control_btn right_arrow">
+							<i class="iconfont" class="right_arrow_i">&#xe732;</i>
+						</a>
+						<div class="sale_scroll_box">
+							<div class="tuijian" style="height: 470px;">
+							<ul class="sale_scroll_ul clearfix">
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img14.360buyimg.com/n1/s360x360_jfs/t1/118319/21/2429/245627/5ea2446eE89d65e26/68cd25f372130efa.jpg" width="150px" height="150px" />
+											</a>
+
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>47.5</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">300减210_百草味 红豆薏仁粉420g 五谷杂粮营养早餐即食冲饮代餐粉粥 MJ 原味</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img12.360buyimg.com/n1//s360x360_jfs/t1/110614/33/14481/519941/5ea7c4c3E51d9b459/b21d9c355b9df9a3.png" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>839</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">卡西欧(CASIO)手表SHEEN系列时尚优雅石英女表皮带 SHE-3034GL-7B</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img12.360buyimg.com/n1/s360x360_jfs/t1/107563/26/2207/1012815/5e047d2cE0b6ba997/c29c89466ece2f7d.png" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>35.9</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">【泰安扶贫馆】燕麦片 水果坚果谷物营养即食早餐 酸奶果粒燕麦片400g/罐</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img12.360buyimg.com/n1/s360x360_jfs/t1/94338/19/18436/491610/5e950e6dE5b865c56/4d97a5da36bcbec4.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>27.9</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">舌里 南瓜吐司面包2斤箱装 健康速食粗粮代餐早餐食品1000g/箱</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t1/96398/12/7346/151368/5dfa312bE09a6c35b/8e9fbefaa612bd93.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>24.8</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">盼盼 老面包 手撕早餐饼干糕点奶香味930g</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img14.360buyimg.com/n1/s360x360_jfs/t1/107167/23/15570/231068/5eae3469Efa300c9a/5d85f408f7dfd75a.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>159.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">鸿星尔克男鞋运动鞋男女新款网布透气轻便老爹鞋旅游休闲鞋子时尚跑步鞋子情侣鞋 正黑/太阳橙 42</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img13.360buyimg.com/n1/s360x360_jfs/t1/17907/30/5607/349673/5c3f318aEaa909937/fc56c4263b9cc0d8.png" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>10.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">一晨 本色卷纸竹浆卫生纸4层妇婴适用纸巾 1提12卷 1.3斤</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img10.360buyimg.com/n1/s360x360_jfs/t1/110662/2/14669/340462/5ea91c79E78d5dc03/171e0f4941d7a1fe.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>1129.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">卡西欧(CASIO)手表G-SHOCK时尚运动男表 大表盘防水男士表 黑金GA-110GB-1A</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t25396/341/12708913/141275/c840da7f/5b62bb6eNc6098c6f.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>19.9</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">进口牛油果小果2粒装 单果100g起 新鲜水果</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t1/78057/19/7039/223760/5d52937bE32e4beac/0bf587e1b7d5de74.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>168.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">摩米士MOMAX苹果PD快充充电器41W多口快充头2A1C充电头适用苹果iPad/iPhone11华为手机平板等白色</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t1/110741/35/6579/235369/5eaa7e3bEb7844f02/97e44fdd9de2c13c.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>239.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">【惊鸿-节庆版】鸿星尔克运动鞋 新款男鞋时尚女鞋限定潮流老爹鞋情侣鞋 桦木色/新荧光红【男款】 42</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t1/97162/5/8174/183260/5e01c11cE35e69345/765cc69c6a49b88c.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>29.2</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">桂格（QUAKER）麦果脆 多种莓果麦片早餐即食麦片谷物盒装200g(40g*5)内含小袋装</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img11.360buyimg.com/n1/s360x360_jfs/t1/11928/17/3755/341128/5c21c7f7Ec4185b00/23caeab8ad523b35.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>10.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">一晨卫生纸妇婴家用卷纸原木擦手纸批发卷筒纸团购650g/提 1提12卷</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img10.360buyimg.com/n1/s360x360_jfs/t1/111040/40/2987/180977/5ea52521Ef2219519/258d87a9ed4cdf6d.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>119.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">鸿星尔克男鞋运动鞋男网面轻便男士跑步鞋女鞋子2020夏季休闲鞋轻便旅游情侣慢跑鞋 正黑【男款】 42</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img12.360buyimg.com/n1/s360x360_jfs/t1/110470/14/14644/377588/5ea7c4c0Eacf3c840/511247765d8017fd.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>839.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">卡西欧(CASIO)手表G-SHOCK系列迷彩运动双显示防震电子男表 经典迷彩盘GA-100CF-1A9</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="img/3f23c3f3a2048f2f.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>169.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">鸿星尔克男鞋气垫鞋运动鞋男新款透气网布皮革耐磨减震半掌气垫鞋休闲旅游慢跑鞋 正白/正黑（网布面） 42</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img14.360buyimg.com/n1/s360x360_jfs/t1/90864/37/7313/522025/5dfb122cE0139170b/92031ea56c45274f.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>28.8</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">盼盼 手撕面包棒 营养早餐食品软面包蛋糕点心休闲零食小吃 奶香味700g</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img13.360buyimg.com/n1/s360x360_jfs/t1/59984/4/4857/431267/5d3020e8E8c89c946/b380b7790d074ccd.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>38.9</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">百草味 冲饮早餐营养即食谷物燕麦片 坚果水果麦片750g/袋</a>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img13.360buyimg.com/n1/s360x360_jfs/t1/102211/34/8221/183951/5e022d44E67438305/efcdca9519c49203.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>29.8</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">酸奶果粒草莓黄桃坚果水果燕麦片508g百搭零食代餐即食美味营养早餐干吃冷泡 酸奶水果燕麦508g*1</a>
+											</p>
+										</div>
+									</div>
+									<div class="sale_item">
+										<div class="prod_img">
+											<a href="#">
+												<img src="//img14.360buyimg.com/n1/s360x360_jfs/t1/119262/38/3825/272918/5eaa7e3dE96e1bb27/170e63d26fb52908.jpg" width="150px" height="150px"/>
+											</a>
+											<div class="add_gouwuche">
+												<i class="iconfont">&#xe630;</i>
+											</div>
+										</div>
+										<div class="prod_info">
+											<p class="p_pri">
+												￥
+												<b>219.0</b>
+											</p>
+											<p class="p_tit">
+												<a href="#">鸿星尔克跑鞋男 春秋款增高老爹鞋耐磨防滑户外运动鞋休闲鞋 橘黄/灰墨蓝 42</a>
+											</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							</div>
+						</div>
+						
+						<div class="view_dot">
+							<span class="gouwuche_li zuo_hei"></span>
+							<span class="you_hei"></span>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--尾部-->
+		<div class="wei">
+                    	<div class="wrap ft_footer_service clearfix">
+                    		<a>
+                    			<img src="img/CgQI0lWskgmADBnsAAAPZvcSh3E68900.jpg"/>
+                    			<b>正品保障</b>
+                    			<span>正品行货 放心选购</span>
+                    		</a>
+                    		<a>
+                    			<img src="img/ChEbulWsk4iADa_aAAAM544hHN818600.jpg"/>
+                    			<b>满99包邮</b>
+                    			<span>满99元 免运费</span>
+                    		</a>
+                    		<a>
+                    			<img src="img/CgQIz1WslI-Adao3AAAN5b_ut2I80100.jpg"/>
+                    			<b>售后无忧</b>
+                    			<span>7天无理由退货</span>
+                    		</a>
+                    		<a>
+                    			<img src="img/ChEi11WsyiyALBbiAAAN9lEEK5M33200.jpg"/>
+                    			<b>准时送达</b>
+                    			<span>收货时间由你做主</span>
+                    		</a>
+                    	</div>
+                    	<div class="wrap ft_service_link clearfix">
+                    		<!--新手入门等文字-->
+                    		<div class="ft_help_list clearfix">
+                    			<dl>
+
+                    				<dt>新手入门</dt>
+                    				<dd>
+                    					<a href="#">购物流程</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">会员制度</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">订单查询</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">服务协议及隐私说明</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">网站地图</a>
+                    				</dd>
+                    			</dl>
+                    			<dl>
+                    				<dt>支付方式</dt>
+                    				<dd>
+                    					<a href="#">货到付款</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">网上支付</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">礼品卡支付</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">其它支付</a>
+                    				</dd>
+                    				
+                    			</dl>
+                    			<dl>
+                    				<dt>配送服务</dt>
+                    				<dd>
+                    					<a href="#">配送进度查询</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">商品验货与签收</a>
+                    				</dd>
+                    				
+                    			</dl>
+                    			<dl>
+                    				<dt>相关规则</dt>
+                    				<dd>
+                    					<a href="#">平台规则</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">退换货政策</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">发票制度</a>
+                    				</dd>
+                    				<dd>
+                    					<a href="#">帮助中心</a>
+                    				</dd>
+                    				
+                    			</dl>
+                    		</div>
+                    		<!--二维码-->
+                    		<div class="ft_code_wrap clearfix">
+                    			<div class="ft_mobile_code clearfix">
+                    				<p>APP更优惠</p>
+                    				<a href="#">
+                    					<img src="img/qryhd.png" alt="APP更优惠二维码" />
+                    				</a>
+                    			</div>
+                    			<div class="ft_mobile_code clearfix">
+                    				<p>加微信查订单</p>
+                    				<a href="#">
+                    					<img src="img/5a2798bbN479da3df.jpg" alt="加微信查订单二维码" />
+                    				</a>
+                    			</div>
+                    		</div>
+                    	</div>
+                    	<div class="footer">
+                    		<p class="ft_footer_link">
+                    			<a>沪ICP备16050468号</a>|
+                    			<a href="#">经营证照</a>|
+                    			<a href="#">互联网药品信息服务资格证(沪)-经营性-2017-0006</a>|
+                    			<a>违法和不良信息举报电话：4006063968</a>|
+                    			<a href="#">沪B2-20170039</a>|
+                    			<a href="#">沪公网安备 31010502002939号</a>|
+                    			<a href="#">友情链接</a>|
+                    			<a href="#">出版物经营许可证</a>|
+                    			<a href="#">增值电信业务经营许可证</a>
+                    		</p>
+                    		<p>Copyright© 1号店网上超市 2007-2019，All Rights Reserved</p>
+                    		<small class="ft_pic_link">
+                    			<a href="#">
+                    				<img src="img/CgQCr1PQy1CAF7vaAABDexsiEYM24800.jpg"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/f582260777c44b30.png"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/ChEi2lh171KAJrGlAAALl_uZt0E75600.jpg"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/ChEi1FYXHcOAVk_WAAAL2r2-yfo10200.jpg"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/CgQCrlPYTqCASlHXAAAd82JE0eA31000.png"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/5a706bb1Ne3eec0dd.png"/>
+                    			</a>
+                    			<a href="#">
+                    				<img src="img/7b46518a9d74a1d6.jpg"/>
+                    			</a>
+                    		</small>
+                    	</div>
+                    </div>
+                    <div id="guding">
+                    	<ul>
+                    		<li>
+                    			<a href="#">
+                    				
+                    				<em>常购清单</em>
+                    				<i class="iconfont">&#xe63f;</i>
+                    			</a>
+                    		</li>
+                    		<li>
+                    			<a href="#">
+                    				
+                    				<em>我的收藏</em>
+                    				<i class="iconfont">&#xe83f;</i>
+                    			</a>
+                    		</li>
+                    		<li>
+                    			<a href="#">
+                    				
+                    				<em>最近删除</em>
+                    				<i class="iconfont">&#xe66b;</i>
+                    			</a>
+                    		</li>
+                    		<li>
+                    			<a href="#">
+                    				
+                    				<em>返回顶部</em>
+                    				<i class="iconfont">&#xe603;</i>
+                    			</a>
+                    		</li>
+                    	</ul>
+                    </div>
+	</body>
+	<script type="text/javascript">
+				$("#city").click(function (e) {
+					SelCity(this,e);
+				    console.log("inout",$(this).val(),new Date())
+				});
+				</script>
+</html>

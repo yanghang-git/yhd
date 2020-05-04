@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认订单</title>
+		<link rel="stylesheet" href="css/xinzeng.css" />
+		<script type="text/javascript" src="js/jquery1.12.4.js"></script>
+		<script type="text/javascript" src="js/Save.js"></script>
+	</head>
+
+	<body>
+		<div class="order_header wrap">
+			<h1 class="clearfix">
+		        <a class="logo" ></a>
+		        <a class="logo_txt"></a>
+			</h1>
+		</div>
+		<div class="container">
+			<div class="same_module wrap">
+				<div class="same_module_rel">
+					<div class="mod_rel_head clearfix">
+						<span class="mr_tit">收货信息</span>
+						<a href="" class="mr_ctrlbtn open">新建地址</a>
+					</div>
+					<div class="consign_rel_cont">
+						<ul id="consignee-list" class="clearfix" style="height: 120px;">
+
+						</ul>
+						<a class="cng_more" href="#none" style="display: none;"><span>更多地址</span>
+							<em class="sprite_odr"></em></a>
+					</div>
+				</div>
+			</div>
+			<div class="same_module wrap">
+				<div class="same_module_rel">
+					<div class="mod_rel_head clearfix">
+						<span class="mr_tit">支付方式</span>
+						<span class="odr_tips">您的订单中包括不支持货到付款商品，请选择在线支付</span>
+					</div>
+					<div class="paymethd_rel_cont">
+						<span style="cursor: pointer;">
+							<a class="cur" payname="在线支付"><b></b>
+							在线支付<i class="sprite_odr"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="same_module wrap">
+				<div class="same_module_rel">
+					<div class="mod_rel_head clearfix">
+						<span class="mr_tit">配送清单</span>
+						<a href="../../ZhangHeng/shoppingTrolley.html" class="mr_ctrlbtn">返回购物车修改</a>
+					</div>
+					<div class="delivery_rel_cont">
+
+
+					</div>
+				</div>
+			</div>
+			<div class="same_module wrap">
+				<div class="same_module_rel">
+					<div class="mod_rel_head clearfix">
+						<span class="mr_tit">发票信息</span>
+					</div>
+					<div class="invoice_rel_cont">
+						<span>商品明细(电子普通发票) - 个人</span>
+					</div>
+				</div>
+			</div>
+			<div class="same_module assets_mortgage wrap">
+				<div class="same_module_rel">
+					<div class="mod_rel_head clearfix">
+						<span class="mr_tit">资产抵押</span>
+					</div>
+					<div class="assete_rel_cont">
+						<ul>
+							<li class="assets_items">
+								<div class="assete_itms_info clearfix">
+									<div class="assete_left">
+										<b>抵用券</b>
+									</div>
+									<div class="assete_zhong">
+										<span>账户共有0张，本次使用0张</span>
+									</div>
+									<div class="assete_right">
+										<span></span>
+									</div>
+								</div>
+							</li>
+							<li class="assets_items">
+								<div class="assete_itms_info clearfix">
+									<div class="assete_left">
+										<b>账户余额</b>
+									</div>
+									<div class="assete_zhong">
+										<span>当前余额￥0.00，本次使用￥0.00</span>
+										<input type="checkbox" id="yuer" />
+										<label for="yuer">使用余额</label>
+									</div>
+									<div class="assete_right">
+										<span>-￥0.00</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="add_box" style="display: block;float: left;">
+				<div class="add_box_1">
+					<span>新增收货人信息</span>
+					<a class="close" title="关闭">
+					</a>
+				</div>
+				<div class="add_box_2">
+					<from>
+						<div class="item">
+							<span class="label">
+                                <em>*</em>收货人
+                            </span>
+							<input name="name" type="text" id="name" class="itxt" reg="^[\u4e00-\u9fa5]{0,}$" tip="请您填写收货人姓名">
+							<span></span>
+						</div>
+						<div class="item">
+							<span class="label">
+    						    <em>*</em>手机号码
+                            </span>
+							<div>
+								<span class="telnum-prefix">0086</span>
+								<span class="telnum-prefix-gap"></span>
+								<input name="phone" id="phone" type="text" maxlength="11" class="itxt itxt01" reg="^\w{11}$" tip="请您填写收货人手机号码"><span></span>
+                                <span></span>
+                            </div>
+						</div>
+						<div class="item">
+							<span class="label">
+    						<em>&nbsp;&nbsp;</em>固定电话
+    					</span>
+							<div>
+								<span class="telnum-prefix">0086</span>
+								<span class="telnum-prefix-gap"></span>
+								<input name="gdphone" id="gdphone" type="text" class="itxt itxt01" reg="^\w{11}$" tip="手机号码格式不正确"><span></span>
+							</div>
+						</div>
+						<div class="item">
+							<span class="label">
+    						<em>&nbsp;&nbsp;</em>邮箱地址
+    					</span>
+							<input name="email" id="email" type="text" class="itxt" reg="^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$" tip="邮箱格式不正确"><span></span>
+							<div class="ftx-03">
+								用来接收订单提醒邮件，便于您及时了解订单状态
+							</div>
+						</div>
+						<div class="item">
+                            <span id="address"></span>
+							<span class="label">
+	    					<em>*</em>所在地区
+	    				</span>
+	    				<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>京东商城jQuery省市区三级联动选择代码</title>
+<script src="jquery-jdxz20160902/js/cityJson.js"></script>
+<script src="jquery-jdxz20160902/js/Popt.js"></script>
+<script src="jquery-jdxz20160902/js/cityJson.js"></script>
+<script src="jquery-jdxz20160902/js/citySet.js"></script>
+<style type="text/css">
+* { -ms-word-wrap: break-word; word-wrap: break-word; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; }
+html, body {height:100%;width:100%; }
+html, body, h1, h2, h3, h4, h5, h6, div, ul, ol, li, dl, dt, dd, iframe, textarea, input, button, p, strong, b, i, a, span, del, pre, table, tr, th, td, form, fieldset, .pr, .pc { margin: 0; padding: 0; word-wrap: break-word; font-family: verdana,Microsoft YaHei,Tahoma,sans-serif; *font-family: Microsoft YaHei,verdana,Tahoma,sans-serif; }
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc, em, del { font-style: normal; font-size: 100%; }
+ul, ol, dl { list-style: none; }
+._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; }
+._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+.citySel { background-color: #56b4f8; color: #fff !important; }
+._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+.AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+</style>
+</head>
+<body>
+
+<div style="width:420px;margin:40px auto;">
+	<input type="text" class="itxt" id="city" />
+</div>
+<script type="text/javascript">
+$("#city").click(function (e) {
+	SelCity(this,e);
+});
+</script>
+
+</body>
+</html>
+						</div>
+						<div class="item">
+							<span class="label">
+    						    <em>*</em>详细地址
+                            </span>
+							<input name="szdiqu" id="xiangxidizhi" type="text" class="itxt" reg="^[\u4e00-\u9fa5]{0,}$" tip="请输入详细地址"><span></span>
+						    <span></span>
+                        </div>
+						<div class="item">
+							<span class="label">
+	    						<em>&nbsp;&nbsp;</em>地址别名
+	    				</span>
+							<div>
+								<input type="text" id="bieming" class="itxt dzhibm" value=""><span></span>
+								<span class="consign_tag-info">建议填写常用名称</span>
+							</div>
+							<div class="consign_tag  ml10">
+								<span id="home">家里</span>
+								<span id="parenthome">父母家</span>
+								<span id="company">公司</span>
+							</div>
+						</div>
+						<div class="item">
+							<span class="label">
+	    					<em>&nbsp;&nbsp;</em>默认地址
+	    			  	</span>
+							<dd>
+								<a class="set_default">
+									<i class="dot"></i>
+								</a>
+							</dd>
+						</div>
+						<div class="item  mt20">
+							<span class="label">&nbsp;</span>
+							<div class="fl flbtn">
+								<a class="btn-1">
+									<span>保存收货人信息</span>
+								</a>
+							</div>
+						</div>
+					</from>
+				</div>
+			</div>
+		</div>
+		<div class="settling_bar">
+			<div class="pay_tools_bar">
+				<div class="pay_tools_inner">
+					<div class="pay_tli_adr">
+						<p class="adr_name_tel">
+							<span class="pta_name"></span>
+							<span class="pta_tel"></span>
+						</p>
+						<p class="adr_detail">
+							<i class="sprite_odr"></i>
+							<span class="area_name"></span>
+						</p>
+					</div>
+					<div class="pay_tli_price">
+						<ul class="clearfix">
+							<li class="fl prod_jr">
+								<div class="ptp_tit"><span>商品金额</span></div>
+								<div class="ptp_con">
+									<em>¥</em>7.90
+								</div>
+							</li>
+							<li class="fl prod_yh">
+								<div class="ptp_tit"><span>优惠</span></div>
+								<div class="ptp_con"><em>¥</em>0.00</div>
+							</li>
+							<li class="fl prod_dy">
+								<div class="ptp_tit"><span>抵扣</span></div>
+								<div class="ptp_con"><em>¥</em>0.00</div>
+							</li>
+							<li class="fl prod_yf">
+								<div class="ptp_tit"><span>运费</span></div>
+								<div class="ptp_con"><em>¥</em>0.00</div>
+							</li>
+						</ul>
+					</div>
+					<a class="pay_btn_smbit" >提交订单</a>
+					<div class="pay_tli_count">
+						<p class="ptc_tips">还需支付</p>
+						<p id="payPrice" class="ptc_count"><em>¥</em><b>00.00</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
