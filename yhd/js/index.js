@@ -150,7 +150,9 @@ $(function(){
 
 
 
-
+    $('.super-sgPrd .front>.row>li.super').click(function () {
+        window.location.href = "SunXianYuan/SuperSingle/index.html";
+    });
 
 
 

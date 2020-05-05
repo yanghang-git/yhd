@@ -243,10 +243,10 @@ $(function() {
         }
         localStorage.setItem(userName , JSON.stringify(user));
         console.log(user);
-        // alert("订单已提交~ 可以到个人信息查看。三秒后自动返回主页");
-        // setTimeout(()=>{
-        //     window.location.href = "../../index.html";
-        // }, 3000);
+        alert("订单已提交~ 可以到个人信息查看。三秒后自动返回主页");
+        setTimeout(()=>{
+            window.location.href = "../../index.html";
+        }, 3000);
     });
     
 })

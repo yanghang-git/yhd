@@ -788,7 +788,8 @@ em {
 }
 
 .pay_btn_smbit {
-	float: right;
+    cursor:pointer;
+    float: right;
 	display: inline-block;
 	width: 110px;
 	height: 70px;

@@ -376,6 +376,7 @@ body {
     margin-left: 0;
 }
 .super-sgPrd .front {
+    cursor: pointer;
     position: absolute;
     top: 10px;
     left: 0;

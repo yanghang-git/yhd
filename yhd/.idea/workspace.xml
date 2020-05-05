@@ -22,7 +22,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web/web-main-maven" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SunXianYuan/SuperSingle" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -34,15 +34,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA\SoundCode\yhd\data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\JAVA\SoundCode\yhd\ZhangHeng" />
       <recent name="E:\JAVA\SoundCode\yhd\SunXianYuan\SuperSingle" />
+      <recent name="E:\JAVA\SoundCode\yhd\ZhangHeng" />
       <recent name="E:\JAVA\SoundCode\yhd\SunXianYuan\NewConsignee" />
       <recent name="E:\JAVA\SoundCode\yhd\font\data\address" />
       <recent name="E:\JAVA\SoundCode\yhd\font\data_index" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\JAVA\SoundCode\yhd\data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,6 +92,7 @@
       <workItem from="1588499010645" duration="14672000" />
       <workItem from="1588559181641" duration="6520000" />
       <workItem from="1588589106031" duration="7800000" />
+      <workItem from="1588662157095" duration="3478000" />
     </task>
     <servers />
   </component>
